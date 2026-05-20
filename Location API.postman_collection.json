@@ -1,0 +1,647 @@
+{
+  "info": {
+    "_postman_id": "6436fd2e-2ee7-4280-98e1-7a1cfa6fd210",
+    "name": "Location API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55028874",
+    "_collection_link": "https://go.postman.co/collection/55028874-6436fd2e-2ee7-4280-98e1-7a1cfa6fd210?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Ashok Kedar\",\n    \"email\": \"ashok@gmail.com\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/register",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Auth Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"ashok@gmail.com\",\n    \"password\": \"password123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Country Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/countries?include=states.cities&filter[name]=INdia",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "countries"
+          ],
+          "query": [
+            {
+              "key": "include",
+              "value": "states.cities"
+            },
+            {
+              "key": "filter[name]",
+              "value": "INdia"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Country Get Single",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/countries/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "countries",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Country Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": {\n    \"type\": \"countries\",\n    \"attributes\": {\n      \"name\": \"USA\"\n    }\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/countries",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "countries"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Country Update",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": {\n    \"type\": \"countries\",\n    \"id\":\"2\",\n    \"attributes\": {\n      \"name\": \"US\"\n    }\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/countries/2",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "countries",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "State Get All",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/states?include=cities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "states"
+          ],
+          "query": [
+            {
+              "key": "include",
+              "value": "cities"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "State Get Single",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/states/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "states",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "State Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": {\n    \"type\": \"states\",\n    \"attributes\": {\n      \"name\": \"US State\"\n    },\n    \"relationships\": {\n      \"country\": {\n        \"data\": {\n          \"type\": \"countries\",\n          \"id\": \"2\"\n        }\n      }\n    }\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/states",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "states"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "State Update",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": {\n    \"type\": \"states\",\n    \"id\": \"1\",\n    \"attributes\": {\n      \"name\": \"US State Updated\"\n    },\n    \"relationships\": {\n      \"country\": {\n        \"data\": {\n          \"type\": \"countries\",\n          \"id\": \"2\"\n        }\n      }\n    }\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/states/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "states",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "City Get All",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/cities?include=state&?sort=createdAt",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "cities"
+          ],
+          "query": [
+            {
+              "key": "include",
+              "value": "state"
+            },
+            {
+              "key": "?sort",
+              "value": "createdAt"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "City Get Single",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/cities/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "cities",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "City Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": {\n    \"type\": \"cities\",\n    \"attributes\": {\n      \"name\": \"US State City\"\n    },\n    \"relationships\": {\n      \"state\": {\n        \"data\": {\n          \"type\": \"states\",\n          \"id\": \"1\"\n        }\n      }\n    }\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/cities",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "cities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "City Update",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/vnd.api+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"data\": {\n    \"type\": \"cities\",\n    \"id\": \"1\",\n    \"attributes\": {\n      \"name\": \"US State City\"\n    },\n    \"relationships\": {\n      \"state\": {\n        \"data\": {\n          \"type\": \"states\",\n          \"id\": \"1\"\n        }\n      }\n    }\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/cities/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "cities",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
