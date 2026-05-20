@@ -45,8 +45,8 @@ php artisan migrate
 step 6=Start Server
 php artisan serve
 
-============================================================
-============================================================
+
+
 ## Authentication APIs
 
 1. Register
@@ -66,7 +66,7 @@ Response
   "message": "User registered successfully",
   "token": "5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
 }
-=================================================================
+
 2. Login
 
 POST
@@ -82,7 +82,7 @@ Response
   "message": "Login successful",
   "token": "5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
 }
-========================================================================
+
 
 ## JSON:API Resource Endpoints
 
