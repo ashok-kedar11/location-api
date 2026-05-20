@@ -46,15 +46,17 @@ step 6=Start Server
 php artisan serve
 
 
+#  Authentication APIs
 
-## Authentication APIs
+---
 
-1. Register
+## 📌 Register User
 
-POST Request Method
+**Method:** `POST`  
+**Endpoint:** `/api/register`
 
-/api/register
-Request 
+### Request
+```json
 {
   "name": "Ashok Kedar",
   "email": "ashokkedar12@gmail.com",
@@ -66,43 +68,35 @@ Response
   "message": "User registered successfully",
   "token": "5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
 }
+ Login User
 
-2. Login
+Method: POST
+Endpoint: /api/login
 
-POST
-
-/api/login
 Request
 {
   "email": "ashokkedar12@gmail.com",
-  "password": "ashok123",
+  "password": "ashok123"
 }
 Response
 {
   "message": "Login successful",
   "token": "5|vUAiWOgO02YiT7YI895CAGP0n4Pw8byaTJ5hjmOO09c4c2c6"
 }
-
-
-## JSON:API Resource Endpoints
-
-Base URL:
-
+ JSON:API Resource Endpoints
+Base URL
 /api/v1
-
-Required Headers:
-
+ Required Headers
 Accept: application/vnd.api+json
 Content-Type: application/vnd.api+json
-Authorization: Bearer {token} (for protected routes)
+Authorization: Bearer {token}
 
+ Countries API
+ Create Country
 
-# Countries
-Create Country
+Method: POST
+Endpoint: /api/v1/countries
 
-POST
-
-/api/v1/countries
 Request
 {
   "data": {
@@ -112,41 +106,38 @@ Request
     }
   }
 }
-Response=
+Response
 {
-    "jsonapi": {
-        "version": "1.0"
+  "jsonapi": {
+    "version": "1.0"
+  },
+  "links": {
+    "self": "http://127.0.0.1:8000/api/v1/countries/3"
+  },
+  "data": {
+    "type": "countries",
+    "id": "3",
+    "attributes": {
+      "name": "USA",
+      "createdAt": "2026-05-20T10:25:18.000000Z",
+      "updatedAt": "2026-05-20T10:25:18.000000Z"
+    },
+    "relationships": {
+      "states": {
+        "links": {
+          "related": "http://127.0.0.1:8000/api/v1/countries/3/states",
+          "self": "http://127.0.0.1:8000/api/v1/countries/3/relationships/states"
+        }
+      }
     },
     "links": {
-        "self": "http://127.0.0.1:8000/api/v1/countries/3"
-    },
-    "data": {
-        "type": "countries",
-        "id": "3",
-        "attributes": {
-            "name": "USA",
-            "createdAt": "2026-05-20T10:25:18.000000Z",
-            "updatedAt": "2026-05-20T10:25:18.000000Z"
-        },
-        "relationships": {
-            "states": {
-                "links": {
-                    "related": "http://127.0.0.1:8000/api/v1/countries/3/states",
-                    "self": "http://127.0.0.1:8000/api/v1/countries/3/relationships/states"
-                }
-            }
-        },
-        "links": {
-            "self": "http://127.0.0.1:8000/api/v1/countries/3"
-        }
+      "self": "http://127.0.0.1:8000/api/v1/countries/3"
     }
+  }
 }
+ Get All Countries
 
-Get All Countries
-
-GET
-
-/api/v1/countries
-
+Method: GET
+Endpoint: /api/v1/countries
 
 
